@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { adminApi } from '../../lib/adminApi';
 import { useAdminAuth } from '../../lib/useAdminAuth';
-
+ 
 const NAV_ITEMS = [
   { href: '/', pathname: '/', label: 'Overview' },
   { href: '/applicants/', pathname: '/applicants', label: 'Applicants' },
