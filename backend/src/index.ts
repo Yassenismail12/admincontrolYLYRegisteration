@@ -6,7 +6,7 @@ interface Env {
   SESSION_SECRET: string;
 }
 
-const DEFAULT_ORIGIN = 'http://localhost:3000';
+const DEFAULT_ORIGIN = 'https://control.registeration.ylyunion.com/';
 const SESSION_TTL_SECONDS = 60 * 60 * 12; // 12 hours
 const SESSION_COOKIE_NAME = 'yly_admin_session';
 const LOGIN_ATTEMPT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
