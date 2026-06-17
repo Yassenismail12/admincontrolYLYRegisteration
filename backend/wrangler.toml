@@ -1,0 +1,25 @@
+# Wrangler configuration for the standalone YLY Admin Dashboard Worker.
+# This Worker is intentionally separate from the main registration Worker -
+# it binds to the SAME D1 database (same database_id) but is deployed and
+# versioned independently.
+
+name = "yly-admin-api"
+main = "src/index.ts"
+compatibility_date = "2026-06-11"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "yly-registration-db"
+database_id = "aa702b2d-39dd-4e12-b9e3-250ffad1fcb0"
+
+[vars]
+# Comma-separated list if you need more than one trusted frontend origin
+# (e.g. your deployed dashboard + localhost for dev).
+WORKER_ALLOWED_ORIGIN = "control.registeration.ylyunion.com"
+
+# Required secrets (set with `wrangler secret put <NAME>`, never put real
+# values here):
+#   wrangler secret put ADMIN_USERNAME
+#   wrangler secret put ADMIN_PASSWORD
+#   wrangler secret put SESSION_SECRET   # e.g. `openssl rand -hex 32`
